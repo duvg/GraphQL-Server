@@ -21,7 +21,12 @@ class Clientes extends Component{
     };
 
     previousPage = () => {
-        console.log("anterior");
+        this.setState({
+            paginate: {
+                offset: this.state.paginate.offset - this.limit,
+                page: this.state.paginate.page - 1
+            }
+        });
     };
 
     nextPage = () => {
@@ -30,7 +35,7 @@ class Clientes extends Component{
                 offset: this.state.paginate.offset + this.limit,
                 page: this.state.paginate.page + 1
             }
-        })
+        });
     };
 
     goToPage = (offset, page) => {

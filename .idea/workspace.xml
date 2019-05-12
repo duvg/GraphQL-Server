@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bf0a865-343d-4b4c-8f3e-47d9fafce3bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cliente/src/components/shared/Paginator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cliente/src/helpers/swal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cliente/src/components/clientes/Clientes.js" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/components/clientes/Clientes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/components/clientes/EditarCliente.js" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/components/clientes/EditarCliente.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/components/clientes/NuevoCliente.js" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/components/clientes/NuevoCliente.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/mutations/ClienteMutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/mutations/ClienteMutations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/queries/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/queries/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/db.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/resolvers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/schema.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/schema.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/.babelrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/data/resolvers.js" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/data/resolvers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/data/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/data/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -79,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cliente/src/components/clientes/Clientes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+            <state relative-caret-position="259">
+              <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -103,17 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cliente/src/components/shared/Paginator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
+            <state relative-caret-position="619">
               <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/servidor/.babelrc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -146,9 +115,9 @@
         <option value="$PROJECT_DIR$/servidor/data/resolvers.js" />
         <option value="$PROJECT_DIR$/servidor/data/schema.graphql" />
         <option value="$PROJECT_DIR$/cliente/src/queries/index.js" />
-        <option value="$PROJECT_DIR$/cliente/src/components/clientes/Clientes.js" />
         <option value="$PROJECT_DIR$/cliente/src/components/shared/Paginator.js" />
         <option value="$PROJECT_DIR$/servidor/.babelrc" />
+        <option value="$PROJECT_DIR$/cliente/src/components/clientes/Clientes.js" />
       </list>
     </option>
   </component>
@@ -239,6 +208,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
@@ -272,18 +242,18 @@
       <updated>1557603649688</updated>
       <workItem from="1557603652617" duration="8836000" />
       <workItem from="1557622319800" duration="1634000" />
-      <workItem from="1557670010811" duration="4473000" />
+      <workItem from="1557670010811" duration="4608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14943000" />
+    <option name="totallyTimeSpent" value="15078000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="733" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24474959" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24474959" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -404,27 +374,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/components/clientes/Clientes.js">
+    <entry file="file://$PROJECT_DIR$/servidor/.babelrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/components/shared/Paginator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
+        <state relative-caret-position="619">
           <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/.babelrc">
+    <entry file="file://$PROJECT_DIR$/cliente/src/components/clientes/Clientes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        <state relative-caret-position="259">
+          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
