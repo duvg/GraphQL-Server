@@ -3,11 +3,11 @@ import React, { Component, Fragment } from 'react'
 // import apollo mutations
 import { Mutation } from 'react-apollo';
 
-// import Sweetalert2
-import Swal from 'sweetalert2';
-
 // Import mutation
 import { NUEVO_CLIENTE } from '../../mutations/ClienteMutations';
+
+// Custom swall
+import {showSwall} from '../../helpers/swal';
 
 
 export default class NuevoCliente extends Component {
@@ -23,21 +23,21 @@ export default class NuevoCliente extends Component {
     },
     error: false,
     emails: []
-  }
+  };
 
   // Add emails
   nuevoEmail = () =>{
     this.setState({
       emails: this.state.emails.concat([{email: ''}])
     })
-  }
+  };
 
   // Remove email field
   quitarEmail = (i) => {
     this.setState({
       emails: this.state.emails.filter((email, index) => i !== index)
     });
-  }
+  };
 
   // Read each email field
   leerEmail = (i, e) => {
@@ -52,19 +52,17 @@ export default class NuevoCliente extends Component {
     this.setState({
       emails: nuevoEmail
     });
-  }
-  
-  successFull = () => {
-    console.log("echo");
-    Swal.fire({
-      title: 'En hora Buena',
-      text: 'Cliente creado satisfactoriamente',
-      type: 'success',
-      confirmButtonText: 'Ok'
-    }).then(() => {
+  };
+
+  success = () => {
+      showSwall(
+          "Actualizacion Exitosa",
+          "Se ha actualizado el cliente correctamente",
+          "success",
+      );
+
       this.props.history.push('/');
-    });
-  }
+  };
 
   render() {
     const {error} = this.state;
@@ -77,7 +75,7 @@ export default class NuevoCliente extends Component {
         <div className="row justify-content-center">
           <Mutation 
             mutation={NUEVO_CLIENTE}
-            onCompleted={this.successFull.bind(this)}
+            onCompleted={this.success.bind(this)}
           >
             { crearCliente => (
               <form 

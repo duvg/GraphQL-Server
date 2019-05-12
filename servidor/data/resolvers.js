@@ -2,10 +2,11 @@ import mongoose from 'mongoose';
 import { Cliente } from './db';
 import { rejects } from 'assert';
 
+
 export const resolvers = {
     Query: {
-        getClientes: (root, {limite}) => {
-            return Cliente.find({}).limit(limite);
+        getClientes: (root, {limit, offset}) => {
+            return Cliente.find({}).limit(limit).skip(offset);
         },
         getCliente : (root, {id}) => {
             return new Promise((resolve, object) => {
@@ -15,6 +16,14 @@ export const resolvers = {
                 });
             });
         },
+        totalClientes: (root) => {
+            return new Promise((resolve, object) => {
+               Cliente.countDocuments({}, (error, count) => {
+                  if(error) rejects(error)
+                   else resolve(count)
+               });
+            });
+        }
     },
     Mutation: {
         crearCliente : (root, {input}) => {
@@ -24,7 +33,7 @@ export const resolvers = {
                 empresa : input.empresa,
                 emails : input.emails,
                 edad : input.edad,
-                tipo : input.tip,
+                tipo : input.tipo,
                 pedidos : input.pedidos,
             });
 
@@ -39,7 +48,7 @@ export const resolvers = {
         },
         actualizarCliente : (root, {input}) => {
             return new Promise((resolve, object) => {
-                Cliente.findOneAndUpdate({ _id : input.id}, input, {new: true}, (error, cliente) => {
+                Cliente.findOneAndUpdate({ _id : input.id }, input, {new: true}, (error, cliente) => {
                     if(error) rejects(error)
                     else resolve(cliente)
                 });

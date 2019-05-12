@@ -23,9 +23,11 @@ enum TipoCliente {
     PREMIUM
 }
 
+ """ Queries de la aplicación"""
 type Query {
-    getClientes(limite: Int) : [Cliente]
+    getClientes(limit: Int, offset: Int) : [Cliente]
     getCliente(id: ID): Cliente
+    totalClientes : String
 }
 
 input EmailInput {
