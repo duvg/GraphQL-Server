@@ -1,10 +1,6 @@
-import mongoose, { connect } from 'mongoose';
-
-mongoose.Promise = global.Promise;
-
-mongoose.connect('mongodb://localhost/clientes', {useNewUrlPasrser: true} );
-
-// Definicion de schema clientes
+import mongoose from 'mongoose';
+// import config to connect mongodb
+import '../config';
 
 const clientesSchema = new mongoose.Schema({
     nombre : String,
@@ -15,7 +11,6 @@ const clientesSchema = new mongoose.Schema({
     tipo : String,
     pedidos : Array 
 });
-
 const Cliente = mongoose.model('clientes', clientesSchema);
 
 export { Cliente };

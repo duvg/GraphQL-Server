@@ -61,7 +61,7 @@ export default class NuevoCliente extends Component {
           "success",
       );
 
-      this.props.history.push('/');
+      this.props.history.push('/clientes');
   };
 
   render() {

@@ -1,0 +1,32 @@
+""" Modelo Product campos de Product """
+type Producto {
+    id: ID
+    nombre: String
+    precio: Float
+    stock: Int
+    codigo: String
+}
+
+input ProductoInput {
+    id: ID,
+    nombre: String!,
+    precio: Float!,
+    stock: Int!
+    codigo: String!
+}
+
+type Query {
+    """ Listar todos los productos """
+    getProductos(limit: Int, offset: Int) : [Producto]
+    """ Seleccionar un producto especifico """
+    getProducto(id: ID!): Producto
+    totalProductos : String
+}
+
+type Mutation {
+    """ Agregar producto """
+    nuevoProducto(input: ProductoInput) : Producto
+    """Atualiza un producto """
+    actualizarProducto(input: ProductoInput): Producto
+    eliminarProducto(id: ID!): String
+}

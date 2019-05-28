@@ -23,13 +23,6 @@ enum TipoCliente {
     PREMIUM
 }
 
- """ Queries de la aplicación"""
-type Query {
-    getClientes(limit: Int, offset: Int) : [Cliente]
-    getCliente(id: ID): Cliente
-    totalClientes : String
-}
-
 input EmailInput {
     email: String
 }
@@ -48,12 +41,20 @@ input ClienteInput {
     tipo: TipoCliente!
     pedidos: [PedidoInput]
 }
-""" Mutations para crear nuevos clientes """
-type Mutation {
-    # Nombre del resolver, Input con datos y Valor de retorno
-    """ Permite crear nuevos clientes """
-    crearCliente(input: ClienteInput) : Cliente
-    actualizarCliente(input: ClienteInput) : Cliente
-    eliminarCliente(id: ID!) :  String
 
-}
+ """ Queries de la aplicación"""
+ type Query {
+     getClientes(limit: Int, offset: Int) : [Cliente]
+     getCliente(id: ID): Cliente
+     totalClientes : String
+ }
+
+ """ Mutations para crear nuevos clientes """
+
+ type Mutation{
+     # Nombre del resolver, Input con datos y Valor de retorno
+     """ Permite crear nuevos clientes """
+     crearCliente(input: ClienteInput) : Cliente
+     actualizarCliente(input: ClienteInput) : Cliente
+     eliminarCliente(id: ID!) :  String
+ }

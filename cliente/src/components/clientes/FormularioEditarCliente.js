@@ -40,7 +40,7 @@ class FormularioEditarCliente extends Component {
         );
 
         this.props.refetch().then(() => {
-           this.props.history.push('/');
+           this.props.history.push('/clientes');
         });
     };
 

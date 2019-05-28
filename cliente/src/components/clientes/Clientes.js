@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Query, Mutation } from 'react-apollo';
 import { Link } from 'react-router-dom';
 
-import { CLIENTES_QUERY } from '../../queries';
+import { CLIENTES_QUERY } from '../../queries/ClienteQuery';
 import { ELIMINAR_CLIENTE } from "../../mutations/ClienteMutations";
 
 import {showSwall} from '../../helpers/swal';
@@ -69,11 +69,17 @@ class Clientes extends Component{
                                             <span> {item.nombre} {item.apellido}  - <strong>{item.empresa}</strong>  </span>
                                         </div>
                                         <div className="col-m4 d-flex justify-content-end">
-                                            <Link to={`/cliente/editar/${item.id}`}
-                                                  className="btn btn-success d-block d-md-inline-block mr-1"
+                                            <Link to={`/clientes/editar/${item.id}`}
+                                                  className="btn btn-success d-block d-md-inline-block btn-sm mr-1"
                                             >
                                                 <i className="fas fa-edit"></i> Editar Cliente
                                             </Link>
+
+                                            <Link
+                                                to={`/pedidos/nuevo/${id}`}
+                                                className="btn btn-warning d-block d-md-inline-block btn-sm mr-1"
+                                            > <i className="fas fa-plus"></i> Nuevo Pedido</Link>
+
                                             <Mutation
                                                 mutation={ELIMINAR_CLIENTE}
                                                 onCompleted={
@@ -88,7 +94,7 @@ class Clientes extends Component{
                                                 {eliminarCliente => (
                                                     <button
                                                         type="button"
-                                                        className="btn btn-danger"
+                                                        className="btn btn-danger btn-sm"
                                                         onClick={() => {
                                                             confirm().then((result) => {
                                                                 if (result.value) {
@@ -113,7 +119,7 @@ class Clientes extends Component{
                     </ul>
                     <Paginator
                         page={this.state.paginate.page}
-                        totalClientes={data.totalClientes}
+                        total={data.totalClientes}
                         limit={this.limit}
                         goToPage={this.goToPage}
                         previousPage={this.previousPage}

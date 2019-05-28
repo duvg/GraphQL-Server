@@ -1,9 +1,8 @@
-import mongoose from 'mongoose';
-import { Cliente } from './db';
+import { Cliente } from '../models/Clientes';
 import { rejects } from 'assert';
 
 
-export const resolvers = {
+export const ClienteResolver = {
     Query: {
         getClientes: (root, {limit, offset}) => {
             return Cliente.find({}).limit(limit).skip(offset);
@@ -56,7 +55,7 @@ export const resolvers = {
         },
         eliminarCliente: (root, {id}) => {
             return new Promise((resolve, object) => {
-                Cliente.findOneAndRemove({_id: id}, (error) => {
+                Cliente.findOneAndDelete({_id: id}, (error) => {
                     if(error) rejects(error)
                     else resolve("Se elimino Correctamente")
                 });

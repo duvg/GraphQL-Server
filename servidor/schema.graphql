@@ -1,0 +1,95 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+" Modelo de cliente, campos de un cliente "
+type Cliente {
+    apellido: String
+    edad: Int
+    emails: [Email]
+    empresa: String
+    id: ID
+    nombre: String
+    pedidos: [Pedido]
+    tipo: TipoCliente
+}
+
+type Email {
+    email: String
+}
+
+" Mutations para crear nuevos clientes "
+type Mutation {
+    actualizarCliente(input: ClienteInput): Cliente
+    "Atualiza un producto "
+    actualizarProducto(input: ProductoInput): Producto
+    " Permite crear nuevos clientes "
+    crearCliente(input: ClienteInput): Cliente
+    eliminarCliente(id: ID!): String
+    eliminarProducto(id: ID!): String
+    " Agregar producto "
+    nuevoProducto(input: ProductoInput): Producto
+}
+
+type Pedido {
+    precio: Int
+    producto: String
+}
+
+" Modelo Product campos de Product "
+type Producto {
+    codigo: String
+    id: ID
+    nombre: String
+    precio: Float
+    stock: Int
+}
+
+" Queries de la aplicaciÃ³n"
+type Query {
+    getCliente(id: ID): Cliente
+    getClientes(limit: Int, offset: Int): [Cliente]
+    " Seleccionar un producto especifico "
+    getProducto(id: ID!): Producto
+    " Listar todos los productos "
+    getProductos(limit: Int, offset: Int): [Producto]
+    totalClientes: String
+}
+
+" Categorias disponibles del cliente "
+enum TipoCliente {
+    BASICO
+    PREMIUM
+}
+
+" Campos para los clientes nuevos "
+input ClienteInput {
+    apellido: String!
+    edad: Int!
+    emails: [EmailInput]
+    empresa: String!
+    id: ID
+    nombre: String!
+    pedidos: [PedidoInput]
+    tipo: TipoCliente!
+}
+
+input EmailInput {
+    email: String
+}
+
+input PedidoInput {
+    precio: Int!
+    producto: String!
+}
+
+input ProductoInput {
+    codigo: String!
+    id: ID
+    nombre: String!
+    precio: Float!
+    stock: Int!
+}

@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class Paginator extends Component {
     state = {
         paginator: {
-            pages: Math.ceil(Number(this.props.totalClientes) / this.props.limit)
+            pages: Math.ceil(Number(this.props.total) / this.props.limit)
         }
     };
     render() {
@@ -27,7 +27,7 @@ class Paginator extends Component {
             >Siguente &raquo;</button> : '';
 
         var numbersPage = [];
-        for (var i = 1; i <= this.props.totalClientes; i += 5){
+        for (var i = 1; i <= this.props.total; i += 5){
             numbersPage.push(i);
             console.log(i - 1);
         }

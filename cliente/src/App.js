@@ -6,7 +6,7 @@ import ApolloClient, { InMemoryCache } from 'apollo-boost';
 import Routing from './Routing';
 
 const client = new ApolloClient({
-  uri: "http://localhost:8000/graphql",
+  uri: "http://localhost:8080/graphql",
   cache: new InMemoryCache({
     addTypename: false
   }),
