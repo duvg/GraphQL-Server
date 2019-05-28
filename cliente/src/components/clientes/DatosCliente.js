@@ -4,7 +4,6 @@ import {CLIENTE_QUERY} from "../../queries/ClienteQuery";
 
 
 const DatosCliente = ({id}) => {
-    console.log(id);
     return (
         <Fragment>
             <h2 className="text-center">Resumen del cliente</h2>
@@ -28,8 +27,9 @@ const DatosCliente = ({id}) => {
                             </li>
                             <li className="border font-weight-bold p-2">
                                 <span className=" d-block">Email: </span>
-                                {emails.map(email => {
-                                    return(<span className="font-weight-normal d-inline-block">{email.email}</span>)
+                                {emails.map((email, index) => {
+
+                                    return(<span key={index}  className="font-weight-normal d-inline-block">{email.email}</span>)
 
 
                                 })}

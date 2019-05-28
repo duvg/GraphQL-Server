@@ -22,6 +22,7 @@ class NuevoPedido extends Component {
                     <div className="col-md-9">
                         <Query query={PRODUCTOS_QUERY}>
                             {({ loading, error, data }) => {
+
                                 if(loading) return (
                                     <div className="spinner" >
                                         <div className="bounce1"></div>
@@ -32,7 +33,7 @@ class NuevoPedido extends Component {
 
                                 if(error) return `${error.message}`;
 
-                                console.log(data);
+
                                 return (
                                     <ContenidoPedido
                                         productos={data.getProductos}
