@@ -1,13 +1,16 @@
-import {merge} from 'lodash';
+import { merge } from 'lodash';
 
-import {ClienteResolver} from './ClienteResolver';
-import {ProductoResolver} from "./ProductoResolver";
+import { ClienteResolver } from './ClienteResolver';
+import { ProductoResolver } from "./ProductoResolver";
+import { PedidoResolver } from "./PedidoResolver";
 import { mergeResolvers } from 'merge-graphql-schemas';
 
 const resolvers = [
     ProductoResolver,
     ClienteResolver,
+    PedidoResolver
 ];
+
 export default mergeResolvers(resolvers);
 /*
 

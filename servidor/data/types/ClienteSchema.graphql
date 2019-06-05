@@ -26,10 +26,6 @@ enum TipoCliente {
 input EmailInput {
     email: String
 }
-input PedidoInput {
-    producto: String!
-    precio: Int!
-}
 """ Campos para los clientes nuevos """
 input ClienteInput {
     id: ID

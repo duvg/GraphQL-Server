@@ -1,4 +1,4 @@
-import { Cliente } from '../models/Clientes';
+import { Cliente } from '../models/Cliente';
 import { rejects } from 'assert';
 
 

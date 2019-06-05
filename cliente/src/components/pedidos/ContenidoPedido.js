@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import Select from 'react-select';
 import Animated from 'react-select/lib/animated';
 import Resumen from "./Resumen";
+import GenerarPedido from "./GenerarPedido";
 
 
 const options = [
@@ -114,6 +115,12 @@ class ContenidoPedido extends Component {
                         $ {this.state.total}
                     </span>
                 </p>
+
+                <GenerarPedido
+                    productos={this.state.productos}
+                    total={this.state.total}
+                    idCliente={this.props.id}
+                />
             </Fragment>
 
         );

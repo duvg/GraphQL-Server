@@ -1,6 +1,6 @@
 import { Producto } from "../models/Producto";
 import { rejects } from 'assert';
-import {Cliente} from "../models/Clientes";
+import {Cliente} from "../models/Cliente";
 
 export const ProductoResolver = {
     Query: {
