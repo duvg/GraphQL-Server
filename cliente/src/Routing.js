@@ -17,6 +17,7 @@ import EditarProducto from "./components/productos/EditarProducto";
 
 // Pedidos
 import NuevoPedido from "./components/pedidos/NuevoPedido";
+import PedidosCliente from "./components/pedidos/PedidosCliente";
 
 
 const Routing = () => (
@@ -40,6 +41,7 @@ const Routing = () => (
 
                     {/* Rutas de pedidos */}
                     <Route exact path="/pedidos/nuevo/:id" component={NuevoPedido} />
+                    <Route exact path="/pedidos/:id" component={PedidosCliente} />
 
                 </Switch>
             </div>

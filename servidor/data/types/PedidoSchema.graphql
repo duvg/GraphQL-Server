@@ -35,7 +35,10 @@ input PedidoInput {
 }
 
 
-
+""" Query PEDIDOS """
+type Query {
+    getPedidos(cliente: String) : [Pedido]
+}
 """ Mutations CRUD PEDIDOS """
 type Mutation {
     nuevoPedido(input: PedidoInput) : Pedido

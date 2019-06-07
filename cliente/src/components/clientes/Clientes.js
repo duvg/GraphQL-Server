@@ -44,9 +44,9 @@ class Clientes extends Component{
                 offset: offset,
                 page: page
             }
-        })
+        });
         console.log("offset ", offset, "page: ", page );
-    }
+    };
 
     render () {
         return (<Query query={CLIENTES_QUERY} pollInterval={1000} variables={{ limit: this.limit, offset: this.state.paginate.offset}}>
@@ -65,20 +65,26 @@ class Clientes extends Component{
                             return (
                                 <li key={item.id} className="list-group-item">
                                     <div className="row justify-content-between align-items-center">
-                                        <div className="col-md-8 d-flex justify-content-between align-items-center">
+                                        <div className="col-md-6 d-flex justify-content-between align-items-center">
                                             <span> {item.nombre} {item.apellido}  - <strong>{item.empresa}</strong>  </span>
                                         </div>
-                                        <div className="col-m4 d-flex justify-content-end">
-                                            <Link to={`/clientes/editar/${item.id}`}
-                                                  className="btn btn-success d-block d-md-inline-block btn-sm mr-1"
-                                            >
-                                                <i className="fas fa-edit"></i> Editar Cliente
-                                            </Link>
+                                        <div className="col-md-6 d-flex justify-content-end">
 
                                             <Link
                                                 to={`/pedidos/nuevo/${id}`}
                                                 className="btn btn-warning d-block d-md-inline-block btn-sm mr-1"
                                             > <i className="fas fa-plus"></i> Nuevo Pedido</Link>
+
+                                            <Link
+                                                to={`/pedidos/${id}`}
+                                                className="btn btn-primary d-block d-md-inline-block btn-sm mr-1"
+                                            >Ver Pedidos</Link>
+
+                                            <Link to={`/clientes/editar/${item.id}`}
+                                                  className="btn btn-success d-block d-md-inline-block btn-sm mr-1"
+                                            >
+                                                <i className="fas fa-edit"></i> Editar Cliente
+                                            </Link>
 
                                             <Mutation
                                                 mutation={ELIMINAR_CLIENTE}

@@ -3,6 +3,16 @@ import { rejects} from 'assert';
 import { Producto } from "../models/Producto";
 
 export const PedidoResolver = {
+    Query: {
+        getPedidos: (root, {cliente}) => {
+            return new Promise((resolve, object) => {
+               Pedido.find({cliente: cliente}, (error, pedido) => {
+                   if(error) rejects(error);
+                   else resolve(pedido);
+               })
+            });
+        }
+    },
     Mutation: {
         nuevoPedido: (root, {input}) => {
             const nuevoPedido = new Pedido({
