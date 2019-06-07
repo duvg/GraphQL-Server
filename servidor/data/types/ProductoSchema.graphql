@@ -17,7 +17,7 @@ input ProductoInput {
 
 type Query {
     """ Listar todos los productos """
-    getProductos(limit: Int, offset: Int) : [Producto]
+    getProductos(limit: Int, offset: Int, stock: Boolean) : [Producto]
     """ Seleccionar un producto especifico """
     getProducto(id: ID!): Producto
     totalProductos : String

@@ -4,8 +4,12 @@ import {Cliente} from "../models/Cliente";
 
 export const ProductoResolver = {
     Query: {
-        getProductos: (root, {limit, offset}) => {
-            return Producto.find({}).limit(limit).skip(offset);
+        getProductos: (root, {limit, offset, stock}) => {
+            let filtro;
+            if(stock) {
+                filtro = { stock: {$gt : 0} }
+            }
+            return Producto.find(filtro).limit(limit).skip(offset);
         },
         getProducto: (root, {id}) => {
             return new Promise((resolve, object) => {

@@ -20,7 +20,7 @@ class NuevoPedido extends Component {
                         <DatosCliente id={id} />
                     </div>
                     <div className="col-md-9">
-                        <Query query={PRODUCTOS_QUERY}>
+                        <Query query={PRODUCTOS_QUERY} variables={{stock: true}}>
                             {({ loading, error, data }) => {
 
                                 if(loading) return (

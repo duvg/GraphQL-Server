@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 
 const validarPedido = (props) => {
-    let noValido = !props.productos || props.total === 0 || isNaN(props.total);
+    let noValido = !props.productos || props.total <= 0 || isNaN(props.total);
 
     return noValido;
 }
