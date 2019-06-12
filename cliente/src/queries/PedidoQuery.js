@@ -15,3 +15,15 @@ export const PEDIDOS_QUERY = gql`
         }
     }
 `;
+
+// Graficas
+export const TOP_CLIENTES = gql`
+    query topClientes {
+        topClientes{
+            total
+            cliente{
+                nombre
+            }
+        }
+    }
+`;

@@ -13,6 +13,12 @@ type PedidoProducto {
     cantidad: Int
 }
 
+type ClienteTotal {
+    total: Float
+    cliente: [Cliente]
+}
+
+
 """ Enum estado perido """
 enum EstadoPedido {
     PENDIENTE
@@ -38,6 +44,9 @@ input PedidoInput {
 """ Query PEDIDOS """
 type Query {
     getPedidos(cliente: String) : [Pedido]
+
+    """ Graficas """
+    topClientes : [ClienteTotal]
 }
 """ Mutations CRUD PEDIDOS """
 type Mutation {

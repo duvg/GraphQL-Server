@@ -11,6 +11,39 @@ export const PedidoResolver = {
                    else resolve(pedido);
                })
             });
+        },
+
+        topClientes: (root) => {
+            return new Promise((resolve, object) => {
+                Pedido.aggregate([
+                    {
+                        $match :  { estado :  "COMPLETADO" }
+                    },
+                    {
+                        $group : {
+                            _id: "$cliente",
+                            total: { $sum : "$total" }
+                        }
+                    },
+                    {
+                        $lookup : {
+                            from : "clientes",
+                            localField : '_id',
+                            foreignField : '_id',
+                            as : 'cliente'
+                        }
+                    },
+                    {
+                        $sort :  { total : -1 }
+                    },
+                    {
+                        $limit: 10
+                    }
+                ], (error, result) => {
+                    if(error) rejects(error);
+                    else resolve(result);
+                })
+            });
         }
     },
     Mutation: {
@@ -36,15 +69,26 @@ export const PedidoResolver = {
 
         // actualiza el estado
         actualizarEstado: (root, {input}) => {
+            console.log(input);
             return new Promise((resolve, object) => {
+
 
                 // recorrer y actualizar la cantidad de productos deacuerdo al estado del pedido
                 input.pedido.forEach(pedido => {
-                    console.log(pedido);
+
+                    let cantidadN = 0;
+                    if(input.estado === 'CANCELADO'){
+                        cantidadN = pedido.cantidad;
+                    } else if(input.estado === 'COMPLETADO')
+                    {
+                        cantidadN = -pedido.cantidad;
+                    }
+
+
                     Producto.updateOne({ _id: pedido.id },
                         {
                             "$inc":
-                                { "stock" : -pedido.cantidad}
+                                { "stock" :  cantidadN}
                         }, function(error) {
                             console.log("sds");
                             if(error) return new Error(error);

@@ -12,6 +12,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
     "react-select": "^2.4.3",
+    "recharts": "^1.6.2",
     "sweetalert2": "^8.10.4"
   },
   "scripts": {

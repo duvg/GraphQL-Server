@@ -19,6 +19,8 @@ import EditarProducto from "./components/productos/EditarProducto";
 import NuevoPedido from "./components/pedidos/NuevoPedido";
 import PedidosCliente from "./components/pedidos/PedidosCliente";
 
+import Panel from "./components/panel/Panel";
+
 
 const Routing = () => (
     <Router>
@@ -34,7 +36,6 @@ const Routing = () => (
 
 
                     {/* Rutas de producto */}
-
                     <Route exact path="/productos/nuevo" component={NuevoProducto} />
                     <Route exact path="/productos/editar/:id" component={EditarProducto} />
                     <Route exact path="/productos" component={Productos} />
@@ -42,6 +43,10 @@ const Routing = () => (
                     {/* Rutas de pedidos */}
                     <Route exact path="/pedidos/nuevo/:id" component={NuevoPedido} />
                     <Route exact path="/pedidos/:id" component={PedidosCliente} />
+
+                    {/* Rutas para las graficas estadisticas */}
+                    <Route exact path="/panel" component={Panel} />
+
 
                 </Switch>
             </div>
