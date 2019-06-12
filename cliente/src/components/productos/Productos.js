@@ -91,7 +91,7 @@ class Productos extends Component {
                                             clase = '';
                                         }
 
-                                        
+
                                         return (
                                              <tr key={id} className={clase}>
                                                 <td>{item.id}</td>

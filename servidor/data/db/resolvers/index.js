@@ -4,11 +4,13 @@ import { ClienteResolver } from './ClienteResolver';
 import { ProductoResolver } from "./ProductoResolver";
 import { PedidoResolver } from "./PedidoResolver";
 import { mergeResolvers } from 'merge-graphql-schemas';
+import {UsuarioResolver} from "./UsuarioResolver";
 
 const resolvers = [
     ProductoResolver,
     ClienteResolver,
-    PedidoResolver
+    PedidoResolver,
+    UsuarioResolver
 ];
 
 export default mergeResolvers(resolvers);
