@@ -42,4 +42,5 @@ type Query {
 """ Mutations CRUD PEDIDOS """
 type Mutation {
     nuevoPedido(input: PedidoInput) : Pedido
+    actualizarEstado(input: PedidoInput): String
 }

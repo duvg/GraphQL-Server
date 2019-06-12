@@ -27,7 +27,18 @@ export const PedidoResolver = {
 
             return new Promise((resolve, object) => {
 
-                // recorrer y actualizar la cantidad de productos
+                nuevoPedido.save((error) => {
+                    if(error) rejects(error)
+                    else resolve(nuevoPedido)
+                });
+            });
+        },
+
+        // actualiza el estado
+        actualizarEstado: (root, {input}) => {
+            return new Promise((resolve, object) => {
+
+                // recorrer y actualizar la cantidad de productos deacuerdo al estado del pedido
                 input.pedido.forEach(pedido => {
                     console.log(pedido);
                     Producto.updateOne({ _id: pedido.id },
@@ -40,12 +51,10 @@ export const PedidoResolver = {
                         })
                 });
 
-
-
-                nuevoPedido.save((error) => {
-                    if(error) rejects(error)
-                    else resolve(nuevoPedido)
-                });
+               Pedido.findOneAndUpdate({_id: input.id}, input, {new: true}, (error) => {
+                   if(error) rejects(error);
+                   else resolve('Actualizado correctamente');
+               })
             });
         }
     }

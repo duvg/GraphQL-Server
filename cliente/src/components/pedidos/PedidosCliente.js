@@ -11,7 +11,6 @@ const PedidosCliente = (props) => {
 
     const cliente = props.match.params.id;
 
-    console.log(cliente);
 
     return (
         <Fragment>
@@ -29,8 +28,6 @@ const PedidosCliente = (props) => {
                         );
 
                         if(error) return `Error: ${error.message}`;
-
-                        console.log(data);
 
                         return (
                             data.getPedidos.map(pedido => (
