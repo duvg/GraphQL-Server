@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import DatosCliente from "../clientes/DatosCliente";
+import DatosCliente from "../Clientes/DatosCliente";
 import { Query } from 'react-apollo';
 import {PRODUCTOS_QUERY} from "../../queries/ProductoQuery";
 

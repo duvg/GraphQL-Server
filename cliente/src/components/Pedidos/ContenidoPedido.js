@@ -26,14 +26,14 @@ class ContenidoPedido extends Component {
         }, () => {
             this.actualizarTotal()
         })
-        //console.log('Algo paso con', productos);
+        //console.log('Algo paso con', Productos);
     };
 
     actualizarTotal = () => {
-        // Leer el state de productos
+        // Leer el state de Productos
         const productos = this.state.productos;
 
-        // Cuando el listado de productos esta ven 0
+        // Cuando el listado de Productos esta ven 0
         if(productos.length === 0) {
             this.setState({
                 total: 0
@@ -57,13 +57,13 @@ class ContenidoPedido extends Component {
 
     actualizarCantidad = (cantidad, index) => {
 
-        // Leer el state de productos
+        // Leer el state de Productos
         const productos = this.state.productos;
 
         // Agregar la cantidad
         productos[index].cantidad = Number(cantidad);
 
-        // Actualizar la cantidad de los productos
+        // Actualizar la cantidad de los Productos
 
         // Valdiacion
 

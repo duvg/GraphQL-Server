@@ -10,11 +10,11 @@ input UsuarioInput {
     nombre: String
     apellidos: String
     usuario: String!
-    paswoord: String!
+    password: String!
 }
 
 
 """ Murtations for users """
 type Mutation {
-    crearUsuario(input: UsuarioInput) : Usuario
+    crearUsuario(input: UsuarioInput) : String
 }

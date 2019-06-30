@@ -11,6 +11,6 @@ const clientesSchema = new mongoose.Schema({
     tipo : String,
     pedidos : Array 
 });
-const Cliente = mongoose.model('clientes', clientesSchema);
+const Cliente = mongoose.model('Clientes', clientesSchema);
 
 export { Cliente };

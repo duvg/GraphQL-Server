@@ -30,7 +30,7 @@ input PedidoProductoInput {
     cantidad: Int
 }
 
-""" Input para pedidos """
+""" Input para Pedidos """
 input PedidoInput {
     id: ID
     pedido: [PedidoProductoInput]

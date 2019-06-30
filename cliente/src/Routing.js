@@ -4,22 +4,27 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 // Components
 
 // Clientes
-import Header from './components/shared/Header';
-import Clientes from './components/clientes/Clientes';
-import NuevoCliente from './components/clientes/NuevoCliente';
-import EditarCliente from './components/clientes/EditarCliente';
+import Header from './components/Shared/Header';
+import Clientes from './components/Clientes/Clientes';
+import NuevoCliente from './components/Clientes/NuevoCliente';
+import EditarCliente from './components/Clientes/EditarCliente';
 
 // Productos
-import Productos from "./components/productos/Productos";
-import NuevoProducto from './components/productos/NuevoProducto';
-import EditarProducto from "./components/productos/EditarProducto";
+import Productos from "./components/Productos/Productos";
+import NuevoProducto from './components/Productos/NuevoProducto';
+import EditarProducto from "./components/Productos/EditarProducto";
 
 
 // Pedidos
-import NuevoPedido from "./components/pedidos/NuevoPedido";
-import PedidosCliente from "./components/pedidos/PedidosCliente";
+import NuevoPedido from "./components/Pedidos/NuevoPedido";
+import PedidosCliente from "./components/Pedidos/PedidosCliente";
 
-import Panel from "./components/panel/Panel";
+// Auth
+import Registro from './components/Auth/Registro';
+import Login from "./components/Auth/Login";
+
+import Panel from "./components/Panel/Panel";
+
 
 
 const Routing = () => (
@@ -28,7 +33,7 @@ const Routing = () => (
             <Header />
             <div className="container">
                 <Switch>
-                    {/* Rutas de clientes */}
+                    {/* Rutas de Clientes */}
                     <Route exact path="/" component={Clientes} />
                     <Route exact path="/clientes" component={Clientes} />
                     <Route exact path="/clientes/nuevo" component={NuevoCliente} />
@@ -40,12 +45,16 @@ const Routing = () => (
                     <Route exact path="/productos/editar/:id" component={EditarProducto} />
                     <Route exact path="/productos" component={Productos} />
 
-                    {/* Rutas de pedidos */}
+                    {/* Rutas de Pedidos */}
                     <Route exact path="/pedidos/nuevo/:id" component={NuevoPedido} />
                     <Route exact path="/pedidos/:id" component={PedidosCliente} />
 
                     {/* Rutas para las graficas estadisticas */}
                     <Route exact path="/panel" component={Panel} />
+
+                    {/*Rutas para Auth*/}
+                    <Route exact path="/registro" component={Registro} />
+                    <Route exact path="/login" component={Login} />
 
 
                 </Switch>

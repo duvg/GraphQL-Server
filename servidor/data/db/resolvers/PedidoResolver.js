@@ -27,7 +27,7 @@ export const PedidoResolver = {
                     },
                     {
                         $lookup : {
-                            from : "clientes",
+                            from : "Clientes",
                             localField : '_id',
                             foreignField : '_id',
                             as : 'cliente'
@@ -73,7 +73,7 @@ export const PedidoResolver = {
             return new Promise((resolve, object) => {
 
 
-                // recorrer y actualizar la cantidad de productos deacuerdo al estado del pedido
+                // recorrer y actualizar la cantidad de Productos deacuerdo al estado del pedido
                 input.pedido.forEach(pedido => {
 
                     let cantidadN = 0;

@@ -7,7 +7,7 @@ import { ELIMINAR_CLIENTE } from "../../mutations/ClienteMutations";
 
 import {showSwall} from '../../helpers/swal';
 import {confirm} from '../../helpers/swal';
-import Paginator from '../shared/Paginator';
+import Paginator from '../Shared/Paginator';
 
 
 class Clientes extends Component{

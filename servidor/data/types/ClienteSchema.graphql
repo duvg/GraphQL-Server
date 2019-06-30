@@ -26,7 +26,7 @@ enum TipoCliente {
 input EmailInput {
     email: String
 }
-""" Campos para los clientes nuevos """
+""" Campos para los Clientes nuevos """
 input ClienteInput {
     id: ID
     nombre: String!
@@ -45,11 +45,11 @@ input ClienteInput {
      totalClientes : String
  }
 
- """ Mutations para crear nuevos clientes """
+ """ Mutations para crear nuevos Clientes """
 
  type Mutation{
      # Nombre del resolver, Input con datos y Valor de retorno
-     """ Permite crear nuevos clientes """
+     """ Permite crear nuevos Clientes """
      crearCliente(input: ClienteInput) : Cliente
      actualizarCliente(input: ClienteInput) : Cliente
      eliminarCliente(id: ID!) :  String

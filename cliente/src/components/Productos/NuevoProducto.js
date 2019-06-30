@@ -66,7 +66,7 @@ class NuevoProducto extends Component {
         );
 
         // Redirect
-        this.props.history.push('/productos');
+        this.props.history.push('/Productos');
     };
 
     render() {

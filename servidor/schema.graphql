@@ -21,12 +21,12 @@ type Email {
     email: String
 }
 
-" Mutations para crear nuevos clientes "
+" Mutations para crear nuevos Clientes "
 type Mutation {
     actualizarCliente(input: ClienteInput): Cliente
     "Atualiza un producto "
     actualizarProducto(input: ProductoInput): Producto
-    " Permite crear nuevos clientes "
+    " Permite crear nuevos Clientes "
     crearCliente(input: ClienteInput): Cliente
     eliminarCliente(id: ID!): String
     eliminarProducto(id: ID!): String
@@ -54,7 +54,7 @@ type Query {
     getClientes(limit: Int, offset: Int): [Cliente]
     " Seleccionar un producto especifico "
     getProducto(id: ID!): Producto
-    " Listar todos los productos "
+    " Listar todos los Productos "
     getProductos(limit: Int, offset: Int): [Producto]
     totalClientes: String
 }
@@ -65,7 +65,7 @@ enum TipoCliente {
     PREMIUM
 }
 
-" Campos para los clientes nuevos "
+" Campos para los Clientes nuevos "
 input ClienteInput {
     apellido: String!
     edad: Int!

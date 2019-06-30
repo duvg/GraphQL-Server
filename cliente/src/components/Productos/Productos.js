@@ -6,7 +6,7 @@ import { PRODUCTOS_QUERY } from "../../queries/ProductoQuery";
 import { ELIMINAR_PRODUCTO } from "../../mutations/ProductoMutation";
 import { Link } from 'react-router-dom';
 import {confirm} from '../../helpers/swal'
-import Paginator from "../shared/Paginator";
+import Paginator from "../Shared/Paginator";
 
 class Productos extends Component {
 
